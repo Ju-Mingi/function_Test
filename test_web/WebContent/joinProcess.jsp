@@ -44,7 +44,7 @@
 		
 		if(result !=0){
 			out.println("<script>");
-			out.println("location.href = 'Login.jsp'");
+			out.println("location.href = 'loginForm.jsp'");
 			out.println("</script>");
 		}else{
 			out.println("<script>");
