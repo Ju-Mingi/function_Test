@@ -10,9 +10,10 @@
 
 </head>
 
- <link rel="stylesheet" href="Login.css">
+
+ <link rel="stylesheet" href="loginForm.css">
 <body>
-  <form  name="log"action = "login" method="post">
+  <form  name="log"action = "loginProcess.jsp" method="post" >
    <!-- 전송할 페이지(서버) 지정 -->
     <table>
       <tr>
@@ -37,7 +38,7 @@
         <td colspan="3" align=center>
           <br>
           <div class="btn">
-          <input id="put1" type="submit"  value="로그인"  >
+          <input id="put1" type="submit"  value="로그인" >
           </div>
           <br>
            <div class="btn1">
@@ -47,13 +48,15 @@
         <!-- 회원 정보 찾기 type 추후 변경 예정 -->
          <div class="btn2">
           
-        	<input id="put3" type="button" name="" value="Sign_up" onclick="location.href='/signup'">
+        	<input id="put3" type="button" name="" value="Sign_up" onclick="location.href='joinForm.jsp'">
 		</div>  
 		      
         </td>
       </tr>
     </table>
+    
   </form>
+
  <script type="text/javascript">
  // 실시간 상담 가능 기능
         var Tawk_API = Tawk_API || {},
