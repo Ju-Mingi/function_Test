@@ -74,9 +74,7 @@
 							<option>daum.net</option>
 							<option>gmail.com</option>
 							<option>nate.com</option>
-							<option>직접 입력</option>
-					</select> <input type="text" name="email_direct" maxlength="20"
-						placeholder="직접 입력 선택 시 입력"></td>
+					</select></td>
 				</tr>
 
 				<tr>

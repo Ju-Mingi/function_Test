@@ -12,7 +12,7 @@
 	String name = request.getParameter("name");
 	String gender = request.getParameter("gender");
 	String birthday = request.getParameter("birth_yy")+request.getParameter("birth_mm")+request.getParameter("birth_dd");
-	String email = request.getParameter("email_1")+"@"+request.getParameter("email_2")+request.getParameter("email_direct");
+	String email = request.getParameter("email_1")+"@"+request.getParameter("email_2");
 	String phone = request.getParameter("phone_1")+request.getParameter("phone_2")+request.getParameter("phone_3");
 	String address = request.getParameter("address_street")+request.getParameter("address_detail");
 	String question = request.getParameter("question");
