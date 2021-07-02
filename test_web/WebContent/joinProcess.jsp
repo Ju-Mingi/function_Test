@@ -8,7 +8,6 @@
 	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("pw");
-	String password_check = request.getParameter("pw_check");
 	String name = request.getParameter("name");
 	String gender = request.getParameter("gender");
 	String birthday = request.getParameter("birth_yy")+request.getParameter("birth_mm")+request.getParameter("birth_dd");
@@ -24,21 +23,20 @@
 	
 	try{
 		Context init = new InitialContext();
-		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
+		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB"); // oracle 계정정보 가져오기
 		conn = ds.getConnection();
 		
-		pstmt = conn.prepareStatement("INSERT INTO CUST_INFO VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+		pstmt = conn.prepareStatement("INSERT INTO CUST_INFO VALUES(?,?,?,?,?,?,?,?,?,?)");
 		pstmt.setString(1,id);
 		pstmt.setString(2,password);
-		pstmt.setString(3,password_check);
-		pstmt.setString(4,name);
-		pstmt.setString(5,gender);
-		pstmt.setString(6,phone);
-		pstmt.setString(7,email);
-		pstmt.setString(8,address);
-		pstmt.setString(9,birthday);
-		pstmt.setString(10,question);
-		pstmt.setString(11,answer);
+		pstmt.setString(3,name);
+		pstmt.setString(4,gender);
+		pstmt.setString(5,phone);
+		pstmt.setString(6,email);
+		pstmt.setString(7,address);
+		pstmt.setString(8,birthday);
+		pstmt.setString(9,question);
+		pstmt.setString(10,answer);
 		
 		int result = pstmt.executeUpdate();
 		
@@ -53,6 +51,10 @@
 		}
 	}catch(Exception e){
 		e.printStackTrace();
+		out.println("<script>");
+		out.println("alert('회원 가입 정보를 다시 입력해주세요.')");
+		out.println("location.href = 'joinForm.jsp'");
+		out.println("</script>");
 	}
 %>
 <!DOCTYPE html>
