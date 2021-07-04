@@ -9,21 +9,17 @@
 	#container{
 		display:grid;
 		grid-template-column: 1fr;
-		grid-template-rows: 85px 800px 200px;
+		grid-template-rows: 150px 1fr;
 		text-align:center;
-		border:solid 1px;
 	}
 </style>
 </head>
 <body>
 	<div id="container">
 		<div class="grid1">
-			이곳은 네비게이션 바가 들어갈 부분입니다.
+			<%@ include file ="header.jsp" %>
 		</div>
-		<div class="grid2">
-			이곳은 관리 목차가 들어갈 부분입니다.
-		</div>
-		<div class = "grid3">
+		<div class = "grid2" style="margin-top:10px; border:solid 1px;">
 			이곳은 정보 내용이 들어갈 부분입니다.
 		</div>
 	</div>
