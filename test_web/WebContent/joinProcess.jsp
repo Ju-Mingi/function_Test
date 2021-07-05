@@ -16,6 +16,11 @@
 	String address = request.getParameter("address_street")+request.getParameter("address_detail");
 	String question = request.getParameter("question");
 	String answer = request.getParameter("answer");
+	String ent_name = request.getParameter("enter_name");
+	String ent_num = request.getParameter("enter_1")+request.getParameter("enter_2")+request.getParameter("enter_3");
+	String ent_phone = request.getParameter("ent_phone_1")+request.getParameter("ent_phone_2")+request.getParameter("ent_phone_3");
+	String ent_address = request.getParameter("ent_Address")+" "+request.getParameter("entAddress");
+	
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -26,7 +31,8 @@
 		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB"); // oracle 계정정보 가져오기
 		conn = ds.getConnection();
 		
-		pstmt = conn.prepareStatement("INSERT INTO CUST_INFO VALUES(?,?,?,?,?,?,?,?,?,?)");
+		pstmt = conn.prepareStatement("INSERT INTO CUST_INFO "+
+		"VALUES(?,?,?,?,?,?,?,?,?,?)");
 		pstmt.setString(1,id);
 		pstmt.setString(2,password);
 		pstmt.setString(3,name);
@@ -39,6 +45,7 @@
 		pstmt.setString(10,answer);
 		
 		int result = pstmt.executeUpdate();
+		out.println(result);
 		
 		if(result !=0){
 			out.println("<script>");
